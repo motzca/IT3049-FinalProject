@@ -17,6 +17,10 @@ class Scene1 extends Phaser.Scene{
             frameWidth: 16,
             frameHeight: 16
         });
+        this.load.spritesheet("explosion", "assets/MiniPixelPack3/Effects/Explosion", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
     }
 
     create(){
