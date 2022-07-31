@@ -5,10 +5,14 @@ class Scene1 extends Phaser.Scene{
 
     preload(){
         this.load.image("background", "assets/MiniPixelPack3/SpaceBG.png");
-        //this.load.image("Alan", "assets/MiniPixelPack3/Enemies/Alan.png");
-        //this.load.image("BonBon", "assets/MiniPixelPack3/Enemies/Bon_Bon.png");
-        //this.load.image("Lips", "assets/MiniPixelPack3/Enemies/Lips.png");
-        
+        this.load.spritesheet("Alan", "assets/MiniPixelPack3/Enemies/Alan.png");
+        this.load.spritesheet("BonBon", "assets/MiniPixelPack3/Enemies/Bon_Bon.png");
+        this.load.spritesheet("Lips", "assets/MiniPixelPack3/Enemies/Lips.png");
+        this.load.spritesheet("Player_ship", "assets/MiniPixelPack3/Player Ship/Player_ship.png")
+        this.load.spritesheet("Boosters", "assets/MiniPixelPack3/Player Ship/Boosters.png")
+        this.load.spritesheet("Explosion", "assets/MiniPixelPack3/Effects/Explosion.png")
+        this.load.spritesheet("Sparkle", "assets/MiniPixelPack3/Effects/Sparkle.png")
+
     }
 
     create(){
@@ -50,6 +54,20 @@ class Scene1 extends Phaser.Scene{
             repeat: -1
          });
 
+         //Effect animations
+         this.anims.create({
+            key: "Explosion_Anim",
+            frames: this.anims.generateFrameNumbers("Explosion"),
+            frameRate: 20,
+            repeat: 0
+         });
+         this.anims.create({
+            key: "Sparkle_Anim",
+            frames: this.anims.generateFrameNumbers("Sparkle"),
+            frameRate: 20,
+            repeat: 0
+         });
+         
 
     }
 }
