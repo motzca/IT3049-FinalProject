@@ -13,7 +13,7 @@ class Scene1 extends Phaser.Scene{
             frameWidth: 16,
             frameHeight: 16
         });
-        this.load.spritesheet("Lips", "assets/MiniPixelPack3/Enemies/Lips.png", {
+        this.load.spritesheet("Lips", "assets/MiniPixelPack3/Enemies/Lips.png",  {
             frameWidth: 16,
             frameHeight: 16
         });
