@@ -14,31 +14,6 @@ class Scene2 extends Phaser.Scene{
         this.BonBon = this.add.sprite(config.width / 2, config.height / 2, "BonBon");
         this.Lips = this.add.sprite(config.width / 2 + 50, config.height / 2, "Lips");
 
-        this.animes.create({
-            key: "Alan_anim",
-            frames: this.animes.generateFramedNumbers("Alan"),
-            frameRate: 20,
-            repeat: -1
-        });
-        this.animes.create({
-            key: "BonBon_anim",
-            frames: this.animes.generateFramedNumbers("BonBon"),
-            frameRate: 20,
-            repeat: -1
-        });
-        this.animes.create({
-            key: "Lips_anim",
-            frames: this.animes.generateFramedNumbers("Lips"),
-            frameRate: 20,
-            repeat: -1
-        });
-        this.animes.create({
-            key: "explode",
-            frames: this.animes.generateFramedNumbers("explosion"),
-            frameRate: 20,
-            repeat: 0,
-            hideOnComplete: true
-        });
 
         this.Alan.play("Alan_anim");
         this.BonBon.play("BonBon_anim");
@@ -52,15 +27,6 @@ class Scene2 extends Phaser.Scene{
 
         this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow"});
 
-        this.anims.create({
-            key: "pill",
-            frames: this.animes.generateFramedNumbers("power-up", {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 20,
-            repeat: -1
-        });
 
         this.powerUps = this.physics.add.group();
 
@@ -74,6 +40,9 @@ class Scene2 extends Phaser.Scene{
             powerUp.setColliderWorldBounds(true);
             powerUp.setBounce(1);
         }
+
+        this.player = this.physics.add.sprite(config.width / 2 - 8, config.height - 64, "player");
+        this.player.play("movement");
     }
 
     update(){
