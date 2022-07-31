@@ -51,6 +51,29 @@ class Scene2 extends Phaser.Scene{
         this.input.on("gameobjectdown", this.destroyAlien, this);
 
         this.add.text(20, 20, "Playing game", {font: "25px Arial", fill: "yellow"});
+
+        this.anims.create({
+            key: "pill",
+            frames: this.animes.generateFramedNumbers("power-up", {
+                start: 0,
+                end: 3
+            }),
+            frameRate: 20,
+            repeat: -1
+        });
+
+        this.powerUps = this.physics.add.group();
+
+        var maxObjects = 4;
+        for(var i = 0; i <= maxObjects; i++){
+            var powerUp = this.physics.add.sprite(16, 16, "power-up");
+            this.powerUps.add(powerUp);
+            powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
+
+            powerUp.setVelocity(100, 100);
+            powerUp.setColliderWorldBounds(true);
+            powerUp.setBounce(1);
+        }
     }
 
     update(){
