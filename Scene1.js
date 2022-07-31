@@ -36,6 +36,12 @@ class Scene1 extends Phaser.Scene{
             frameHeight: 16
         });
 
+        //beams
+        this.load.spritesheet("beam", "assets/MiniPixelPack3/Projectiles/Player_beam.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+
         //animations
         this.animes.create({
             key: "Alan_anim",
@@ -74,6 +80,12 @@ class Scene1 extends Phaser.Scene{
         this.animes.create({
             key: "movement",
             frames: this.anims.generateFramedNumbers("player"),
+            frameRate: 20,
+            repeat: -1
+        });
+        this,animes.create({
+            key:"beam_anim",
+            frames: this.anims.generateFramedNumbers("beam"),
             frameRate: 20,
             repeat: -1
         });
