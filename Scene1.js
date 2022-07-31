@@ -5,9 +5,18 @@ class Scene1 extends Phaser.Scene{
 
     preload(){
         this.load.image("background", "assets/MiniPixelPack3/SpaceBG.png");
-        //this.load.image("Alan", "assets/MiniPixelPack3/Enemies/Alan.png");
-        //this.load.image("BonBon", "assets/MiniPixelPack3/Enemies/Bon_Bon.png");
-        //this.load.image("Lips", "assets/MiniPixelPack3/Enemies/Lips.png");
+        this.load.spritesheet("Alan", "assets/MiniPixelPack3/Enemies/Alan.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+        this.load.spritesheet("BonBon", "assets/MiniPixelPack3/Enemies/Bon_Bon.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+        this.load.spritesheet("Lips", "assets/MiniPixelPack3/Enemies/Lips.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
     }
 
     create(){
