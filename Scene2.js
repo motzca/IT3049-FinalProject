@@ -14,6 +14,10 @@ class Scene2 extends Phaser.Scene{
         this.BonBon = this.add.sprite(config.width / 2, config.height / 2, "BonBon");
         this.Lips = this.add.sprite(config.width / 2 + 50, config.height / 2, "Lips");
 
+        this.enemies = this.physics.add.group();
+        this.enemies.add(this.Alan);
+        this.enemies.add(this.BonBon);
+        this.enemies.add(this.Lips);
 
         this.Alan.play("Alan_anim");
         this.BonBon.play("BonBon_anim");
@@ -48,6 +52,14 @@ class Scene2 extends Phaser.Scene{
 
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.projectiles = this.add.group();
+
+        this.physics.add.collider(this.projectiles, this.powerUps, function(projectiles, powerUp){
+            projectiles.destroy();
+        });
+
+        this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
+        this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
+        this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
     }
 
     update(){
@@ -105,5 +117,20 @@ class Scene2 extends Phaser.Scene{
 
     shootBeam(){
         var beam = new Beam(this);
+    }
+
+    pickPowerUp(player, powerUp){
+        powerUp.disbaleBody(true, true);
+    }
+
+    hurtPlayer(player, enemy){
+        this.resetAlienPos(enemy);
+        player.x = config.width / 2 - 8;
+        player.y = config.height - 64;
+    }
+
+    hitEnemy(projectile, enemy){
+        projectiles.destroy();
+        this.resetAlienPos(enemy);
     }
 }
