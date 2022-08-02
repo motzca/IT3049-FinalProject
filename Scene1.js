@@ -29,6 +29,10 @@ class Scene1 extends Phaser.Scene{
             frameWidth: 16,
             frameHeight: 16
         });
+        this.load.spritesheet("defeat", "assets/MiniPixelPack3/Effects/Sparkle.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
 
         // ship + booster spritesheets
         this.load.spritesheet("player", "assets/MiniPixelPack3/Player ship/Player_ship.png", {
@@ -71,6 +75,13 @@ class Scene1 extends Phaser.Scene{
             repeat: 0,
             hideOnComplete: true
         });
+        this.anims.create({
+            key:"sparkle",
+            frames: this.animes.generateFramedNumbers("defeat"),
+            frameRate: 20,
+            repeat: 0,
+            hideOnComplete: true;
+        })
         this.anims.create({
             key: "pill",
             frames: this.animes.generateFramedNumbers("power-up", {
