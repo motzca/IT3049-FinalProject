@@ -5,6 +5,8 @@ class Scene1 extends Phaser.Scene{
 
     preload(){
         this.load.image("background", "assets/MiniPixelPack3/SpaceBG.png");
+        
+        // Alien spritesheets
         this.load.spritesheet("Alan", "assets/MiniPixelPack3/Enemies/Alan.png", {
             frameWidth: 16,
             frameHeight: 16
@@ -79,7 +81,7 @@ class Scene1 extends Phaser.Scene{
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true
-        })
+        });
         this.anims.create({
             key: "pill",
             frames: this.animes.generateFramedNumbers("power-up", {
