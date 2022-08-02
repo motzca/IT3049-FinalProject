@@ -48,6 +48,11 @@ class Scene1 extends Phaser.Scene{
 
         //font
         this.load.bitmapFont("pixelFont", "assets/MiniPixelPack3/font/font.png", "assets/MiniPixelPack3/font/font.xml");
+    }
+
+    create(){
+        this.add.text(20,20, "Loading game...");
+        this.scene.start("playGame");
 
         //animations
         this.anims.create({
@@ -103,10 +108,5 @@ class Scene1 extends Phaser.Scene{
             frameRate: 20,
             repeat: -1
         });
-    }
-
-    create(){
-        this.add.text(20,20, "Loading game...");
-        this.scene.start("playGame");
     }
 }
