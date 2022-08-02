@@ -52,39 +52,39 @@ class Scene1 extends Phaser.Scene{
         //animations
         this.anims.create({
             key: "Alan_anim",
-            frames: this.animes.generateFramedNumbers("Alan"),
+            frames: this.animes.generateFrameNumbers("Alan"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "BonBon_anim",
-            frames: this.animes.generateFramedNumbers("BonBon"),
+            frames: this.animes.generateFrameNumbers("BonBon"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "Lips_anim",
-            frames: this.animes.generateFramedNumbers("Lips"),
+            frames: this.animes.generateFrameNumbers("Lips"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "explode",
-            frames: this.animes.generateFramedNumbers("explosion"),
+            frames: this.animes.generateFrameNumbers("explosion"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true
         });
         this.anims.create({
             key:"sparkle",
-            frames: this.animes.generateFramedNumbers("defeat"),
+            frames: this.animes.generateFrameNumbers("defeat"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true
         });
         this.anims.create({
             key: "pill",
-            frames: this.animes.generateFramedNumbers("power-up", {
+            frames: this.animes.generateFrameNumbers("power-up", {
                 start: 0,
                 end: 3
             }),
@@ -93,13 +93,13 @@ class Scene1 extends Phaser.Scene{
         });
         this.anims.create({
             key: "movement",
-            frames: this.anims.generateFramedNumbers("player"),
+            frames: this.anims.generateFrameNumbers("player"),
             frameRate: 20,
             repeat: -1
         });
         this,anims.create({
             key:"beam_anim",
-            frames: this.anims.generateFramedNumbers("beam"),
+            frames: this.anims.generateFrameNumbers("beam"),
             frameRate: 20,
             repeat: -1
         });
