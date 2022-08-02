@@ -50,25 +50,25 @@ class Scene1 extends Phaser.Scene{
         this.load.bitmapFont("pixelFont", "assets/MiniPixelPack3/font/font.png", "assets/MiniPixelPack3/font/font.xml");
 
         //animations
-        this.animes.create({
+        this.anims.create({
             key: "Alan_anim",
             frames: this.animes.generateFramedNumbers("Alan"),
             frameRate: 20,
             repeat: -1
         });
-        this.animes.create({
+        this.anims.create({
             key: "BonBon_anim",
             frames: this.animes.generateFramedNumbers("BonBon"),
             frameRate: 20,
             repeat: -1
         });
-        this.animes.create({
+        this.anims.create({
             key: "Lips_anim",
             frames: this.animes.generateFramedNumbers("Lips"),
             frameRate: 20,
             repeat: -1
         });
-        this.animes.create({
+        this.anims.create({
             key: "explode",
             frames: this.animes.generateFramedNumbers("explosion"),
             frameRate: 20,
@@ -91,13 +91,13 @@ class Scene1 extends Phaser.Scene{
             frameRate: 20,
             repeat: -1
         });
-        this.animes.create({
+        this.anims.create({
             key: "movement",
             frames: this.anims.generateFramedNumbers("player"),
             frameRate: 20,
             repeat: -1
         });
-        this,animes.create({
+        this,anims.create({
             key:"beam_anim",
             frames: this.anims.generateFramedNumbers("beam"),
             frameRate: 20,
