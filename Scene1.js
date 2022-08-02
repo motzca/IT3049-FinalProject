@@ -42,6 +42,9 @@ class Scene1 extends Phaser.Scene{
             frameHeight: 16
         });
 
+        //font
+        this.load.bitmapFont("pixelFont", "assets/MiniPixelPack3/font/font.png", "assets/MiniPixelPack3/font/font.xml");
+
         //animations
         this.animes.create({
             key: "Alan_anim",
