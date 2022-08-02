@@ -13,7 +13,7 @@ class Beam extends Phaser.GameObjects.Sprite{
 
     update(){
         if(this.y < 32){
-            this.destory();
+            this.destroy();
         }
     }
 }

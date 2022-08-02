@@ -38,14 +38,14 @@ class Scene2 extends Phaser.Scene{
             powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
 
             powerUp.setVelocity(100, 100);
-            powerUp.setColliderWorldBounds(true);
+            powerUp.setCollideWorldBounds(true);
             powerUp.setBounce(1);
         }
 
         this.player = this.physics.add.sprite(config.width / 2 - 8, config.height - 64, "player");
         this.player.play("movement");
         this.cursorKeys = this.input.keyboard.createCursorKeys();
-        this.player.setColliderWorldBounds(true);
+        this.player.setCollideWorldBounds(true);
 
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.projectiles = this.add.group();
@@ -100,9 +100,9 @@ class Scene2 extends Phaser.Scene{
 
     moveAlien(alien, speed){
         alien.y += speed;
-        if (alien.y > config.height){
+        if (alien.y > config.height) {
             this.resetAlienPos(alien);
-        }
+    }
     }
 
     resetAlienPos(alien){

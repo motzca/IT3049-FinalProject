@@ -21,7 +21,7 @@ class Scene1 extends Phaser.Scene{
         });
         
         // explosion and power-up spritesheets
-        this.load.spritesheet("explosion", "assets/MiniPixelPack3/Effects/Explosion", {
+        this.load.spritesheet("explosion", "assets/MiniPixelPack3/Effects/Explosion.png", {
             frameWidth: 16,
             frameHeight: 16
         });
@@ -57,39 +57,39 @@ class Scene1 extends Phaser.Scene{
         //animations
         this.anims.create({
             key: "Alan_anim",
-            frames: this.animes.generateFrameNumbers("Alan"),
+            frames: this.anims.generateFrameNumbers("Alan"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "BonBon_anim",
-            frames: this.animes.generateFrameNumbers("BonBon"),
+            frames: this.anims.generateFrameNumbers("BonBon"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "Lips_anim",
-            frames: this.animes.generateFrameNumbers("Lips"),
+            frames: this.anims.generateFrameNumbers("Lips"),
             frameRate: 20,
             repeat: -1
         });
         this.anims.create({
             key: "explode",
-            frames: this.animes.generateFrameNumbers("explosion"),
+            frames: this.anims.generateFrameNumbers("explosion"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true
         });
         this.anims.create({
             key:"sparkle",
-            frames: this.animes.generateFrameNumbers("defeat"),
+            frames: this.anims.generateFrameNumbers("defeat"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true
         });
         this.anims.create({
             key: "pill",
-            frames: this.animes.generateFrameNumbers("power-up", {
+            frames: this.anims.generateFrameNumbers("power-up", {
                 start: 0,
                 end: 3
             }),
@@ -102,7 +102,7 @@ class Scene1 extends Phaser.Scene{
             frameRate: 20,
             repeat: -1
         });
-        this,anims.create({
+        this.anims.create({
             key:"beam_anim",
             frames: this.anims.generateFrameNumbers("beam"),
             frameRate: 20,
