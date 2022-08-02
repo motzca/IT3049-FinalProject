@@ -17,8 +17,6 @@ class Scene1 extends Phaser.Scene{
             frameWidth: 16,
             frameHeight: 16
         });
-<<<<<<< Updated upstream
-=======
         
         // explosion and power-up spritesheets
         this.load.spritesheet("explosion", "assets/MiniPixelPack3/Effects/Explosion", {
@@ -103,7 +101,6 @@ class Scene1 extends Phaser.Scene{
             frameRate: 20,
             repeat: -1
         });
->>>>>>> Stashed changes
     }
 
     create(){
