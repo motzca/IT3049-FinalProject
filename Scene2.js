@@ -160,7 +160,7 @@ class Scene2 extends Phaser.Scene{
     hitEnemy(projectile, enemy){
         var explosion = new Explosion(this, enemy.x, enemy.y);
 
-        projectiles.destroy();
+        projectile.destroy();
         this.resetAlienPos(enemy);
         this.score += 15;
         var scoreFormated = this.zeroPad(this.score, 6);

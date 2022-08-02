@@ -35,13 +35,13 @@ class Scene1 extends Phaser.Scene{
         });
 
         // ship + booster spritesheets
-        this.load.spritesheet("player", "assets/MiniPixelPack3/Player ship/Player_ship.png", {
+        this.load.spritesheet("player", "assets/MiniPixelPack3/PlayerShip/player.png", {
             frameWidth: 16,
             frameHeight: 16
         });
 
         //beams
-        this.load.spritesheet("beam", "assets/MiniPixelPack3/Projectiles/Player_beam.png", {
+        this.load.spritesheet("beam", "assets/MiniPixelPack3/Projectiles/beam.png", {
             frameWidth: 16,
             frameHeight: 16
         });
