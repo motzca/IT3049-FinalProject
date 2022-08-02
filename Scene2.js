@@ -74,11 +74,11 @@ class Scene2 extends Phaser.Scene{
     }
 
     update(){
-        this.moveAlien(this.Allen, 1);
+        this.moveAlien(this.Alan, 1);
         this.moveAlien(this.BonBon, 2);
         this.moveAlien(this.Lips, 3);
 
-        this.backgrounf.tilePostionY -= 0.5;
+        this.background.tilePostionY -= 0.5;
 
         this.movePlayerManager();
 
@@ -108,7 +108,7 @@ class Scene2 extends Phaser.Scene{
     resetAlienPos(alien){
         alien.y = 0;
         var randomX = Phaser.Math.Between(0, config.width);
-        ship.x = randomX;
+        alien.x = randomX;
     }
 
     destroyAlien(pointer, gameObject){
@@ -137,7 +137,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     pickPowerUp(player, powerUp){
-        powerUp.disbaleBody(true, true);
+        powerUp.disableBody(true, true);
     }
 
     hurtPlayer(player, enemy){
