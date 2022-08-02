@@ -41,7 +41,7 @@ class Scene1 extends Phaser.Scene{
         });
 
         //beams
-        this.load.spritesheet("beam", "assets/MiniPixelPack3/Projectiles/beam.png", {
+        this.load.spritesheet("beam", "assets/MiniPixelPack3/Beams/Player_charged_beam.png", {
             frameWidth: 16,
             frameHeight: 16
         });
