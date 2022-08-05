@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script type="text/javascript" src="phaser.min.js"></script>
-        <script type="text/javascript" src="Scene1.js"></script>
-        <script type="text/javascript" src="Scene2.js"></script>
-        <script type="text/javascript" src="beam.js"></script>
-        <script type="text/javascript" src="explosion.js"></script>
-        <script type="text/javascript" src="defeat.js"></script>
-        <script type="text/javascript" src="game.js"></script>
-        
-        <title> Space Invaders</title>
-        
-        <meta charset="utf-8" name = "viewport" content = "width=device-width, initial-scale=1">
+<html>
+  <head>
+    <script type="text/javascript" src="phaser.min.js"></script>
 
+    <script type="text/javascript" src="BootScene.js"></script>
+    <script type="text/javascript" src="GameScene.js"></script>
+    <script type="text/javascript" src="LoaderScene.js"></script>
+
+    <script type="text/javascript" src="Alien.js"></script>
+    <script type="text/javascript" src="AlienManager.js"></script>
+    <script type="text/javascript" src="Bomb.js"></script>
+    <script type="text/javascript" src="Bullet.js"></script>
+    <script type="text/javascript" src="GC.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="RocketFactory.js"></script>
+    <script type="text/javascript" src="ScoreManager.js"></script>
+
+    <title>Space Invaders</title>
+      <meta charset="utf-8">
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, minimal-ui" />
+      <style type = "text/css">
+        body {
+          padding: 0px;
+          margin: 0px;
+        }
+        canvas {
+          display:block;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        @font-face {
+          font-family: Pixel;
+          src: url('assets/pixel.ttf');
+          font-weight:normal;
+        }
+        </style>
+        <script type="text/javascript" src="build/project.bundle.js" charset="utf-8"></script>
     </head>
+    <body style="overflow: hidden;">
+      <!--<div id="phaser-game"></div>-->
+      <div style="font-family:Pixel; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    </body>
 </html>
