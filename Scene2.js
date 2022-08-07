@@ -34,6 +34,8 @@ enemyInfo = {
 
 
 function preload() {
+    getLoc() 
+    
     this.load.image("background", "assets/MiniPixelPack3/SpaceBG.png");
         
     // Alien spritesheets
@@ -80,12 +82,16 @@ function preload() {
     this.load.bitmapFont("pixelFont", "assets/MiniPixelPack3/font/font.png", "assets/MiniPixelPack3/font/font.xml");
 }
 
+
 var score = 0;
 var lives = 3;
 var isStarted = false;
 var barriers = [];
 var ufoCount = 0;
+
 function create() {
+    var locationObj = window.localStorage.getItem("location").replace('"','');
+    var tempObj =  window.localStorage.getItem("temp");
     scene = this;
     cursors = scene.input.keyboard.createCursorKeys();
     keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -105,14 +111,14 @@ function create() {
 
     scoreText = scene.add.bitmapText(16, 16, "pixelFont", "Score: " + score, 30)
     livesText = scene.add.bitmapText(696, 16,"pixelFont", "Lives: " + lives, 30)
-    startText = scene.add.bitmapText(400, 300, "pixelFont", "Click to Play", 50).setOrigin(0.5)
+
+    startText = scene.add.bitmapText(230, 20, "pixelFont", "Location: " + locationObj.toString().replace('"','') + " Temp: " +tempObj.toString() , 30)
 
     this.input.keyboard.on('keydown-SPACE', shoot);
 
     this.input.on('pointerdown', function () {
         if (isStarted == false) {
             isStarted = true;
-            startText.destroy()
             setInterval(makeSaucer, 15000)
 
         } else {
@@ -147,7 +153,41 @@ function shoot() {
         }
     }
 }
+function getLoc() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.success, this.error);
+        
+    }
+    else {
+        alert('Geolocation is not supported');
+    }
+}
+    
+function error() {
+    alert("Location not found");
+}
+function success(position) {
+    var Geo = {};
+    Geo.lat = position.coords.latitude;
+    Geo.lng = position.coords.longitude;
+    var key = "647d720e41441fa8ede8a0770f9b4eeb";
+    var api = "https://api.openweathermap.org/data/2.5/weather?lat=" + Geo.lat
+        + "&lon=" + Geo.lng
+        + "&units=imperial"
+        + "&appid=" + key;
+    
+    jQuery.ajax({
+        url: api,
+        dataType : "json",
+        success: function (data) {
+            console.log(data)
+            window.localStorage.setItem("location", JSON.stringify(data['name']));
+            window.localStorage.setItem("temp", JSON.stringify(data['main']['temp']));
 
+        }
+        
+    });
+}
 function initEnemys() {
     for (c = 0; c < enemyInfo.count.col; c++) {
         for (r = 0; r < enemyInfo.count.row; r++) {
@@ -311,8 +351,7 @@ function checkOverlap(spriteA, spriteB) {
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
 }
 
-//Enemy Fire
-setInterval(enemyFire, 3000)
+setInterval(enemyFire, 2000)
 
 function enemyFire() {
     if (isStarted === true) {
