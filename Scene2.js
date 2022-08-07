@@ -119,7 +119,6 @@ function create() {
     this.input.on('pointerdown', function () {
         if (isStarted == false) {
             isStarted = true;
-            setInterval(makeSaucer, 15000)
 
         } else {
             shoot()
@@ -272,29 +271,6 @@ function manageBullet(bullet) {
                 }
 
 
-            }
-        }
-
-        for (var step = 0; step < saucers.length; step++) {
-            var saucer = saucers[step];
-            if (checkOverlap(bullet, saucer)) {
-                bullet.destroy();
-                clearInterval(i)
-                isShooting = false
-
-                scoreText.setText("Score: " + score);
-
-
-
-                if ((score - ufoCount) === (enemyInfo.count.col * enemyInfo.count.row)) {
-                    end("Win")
-                }
-
-                saucer.destroy()
-                saucer.isDestroyed = true;
-                saucerSound.stop();
-                score++;
-                ufoCount++;
             }
         }
     }, 10)
